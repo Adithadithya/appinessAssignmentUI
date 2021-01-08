@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
    order_no:2,
    pizza_type:"Tandoori",
    customer:{
-     name:"Jain",
+     name:"Arvind",
      address:"Bangalore",
    },
    image:"../assets/images/pizza2.png",
@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
  order_no:3,
  pizza_type:"Thin crust",
  customer:{
-   name:"Afroz",
+   name:"Aditya",
    address:"Bangalore",
  },
  image:"../assets/images/pizza3.png",
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
  order_no:4,
  pizza_type:"Double cheese",
  customer:{
-   name:"Afroz",
+   name:"Appiness",
    address:"Bangalore",
  },
  image:"../assets/images/pizza4.png",
