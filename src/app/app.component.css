@@ -1,0 +1,55 @@
+h1 {
+    text-align: center;
+    margin-top: 9px;
+    color:tomato
+    
+}
+hr{
+    height: 1px;
+    background-color: #000000;
+    border: none;
+}
+.col-md-4 {
+    text-align: center;
+    font-size: large;
+    font-weight:400;
+    /* border-right: 1px dashed #000000; */
+    
+}
+.card {
+    margin-top: 15px;
+}
+.card-body{
+    text-align: left;
+}
+.left-margin{
+    border-right: 1px dashed tomato;
+}
+.pizza-img {
+    height: 100px;
+    width: 100px;
+    margin-top: 15%;
+}
+p {
+    margin-bottom: 0rem;
+}
+#o{
+    border: 1px solid #d5c7c7;
+  border-radius: 60px;
+  text-align: center;
+}
+.piz-color {
+    color: white;
+}
+#a {
+    color:red;
+}
+
+.col-md-12 .btn{
+    width:100%;
+}
+#margin {
+    margin-left:35px;
+}
+
+

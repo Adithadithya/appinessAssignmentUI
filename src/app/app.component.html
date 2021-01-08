@@ -1,0 +1,136 @@
+<h1><span class="piz-color">PIZ</span>ZA</h1>
+
+<hr>
+<div class="container" style="    background-color: #ffffff6b;
+padding: 32px">
+  <div class="row" style="    text-align: center;
+  font-weight: 600;">
+    <div class="col md-4" id="a">
+      Order Recieved
+    </div>
+    <div class="col md-4" id="a">
+      Preparing
+    </div>
+    <div class="col md-4" id="a">
+      Ready to Serve
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-4 left-margin">
+      <div class="col-offset-md-1 col-md-10" class="card" *ngFor="let order of orders | customFilters:'OrderRecieved';">
+        <div class="row" (click)="open(mymodal,order)">
+          <div class="col-md-5">
+            <img src="{{order.image}}" class="card-img-left pizza-img" alt="error">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <p id="o">Order:{{order.order_no}}</p>
+              <p>Type:{{order.pizza_type}}</p>
+              <p>Quantity:{{order.quantity}}</p>
+              <p>Price:{{order.amount}}</p>
+
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-12">
+          <a href="#" (click)="changeStatus(order.order_no,'Preparing')" class="btn btn-danger">Start to Preparing</a>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 left-margin">
+
+
+      <div class="col-offset-md-1 col-md-10" class="card" *ngFor="let order of orders | customFilters:'Preparing';">
+        <div class="row" (click)="open(mymodal,order)">
+          <div class="col-md-5">
+            <img src="{{order.image}}" class="card-img-left pizza-img" alt="error">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <p id="o">Order:{{order.order_no}}</p>
+              <p>Type:{{order.pizza_type}}</p>
+              <p>Quantity:{{order.quantity}}</p>
+              <p>Price:{{order.amount}}</p>
+
+
+            </div>
+
+          </div>
+        </div>
+        <div class="col-md-12">
+          <a href="#" (click)="changeStatus(order.order_no,'Completed')" class="btn btn-danger">Complete Order</a>
+
+        </div>
+      </div>
+    
+
+    </div>
+    <div class="col-md-4 left-margin">
+
+
+
+      <div class="col-offset-md-1 col-md-10" class="card" *ngFor="let order of orders | customFilters:'Completed';">
+        <div class="row" (click)="open(mymodal,order)">
+          <div class="col-md-5">
+            <img src="{{order.image}}" class="card-img-left pizza-img" alt="error">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <p id="o">Order:{{order.order_no}}</p>
+              <p>Type:{{order.pizza_type}}</p>
+              <p>Quantity:{{order.quantity}}</p>
+              <p>Price:{{order.amount}}</p>
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <ng-template #mymodal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Pizza: {{selectedOrder.pizza_type}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">×</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <img src="{{selectedOrder.image}}" class="card-img-left" alt="error">
+          </div>
+          <div class="col">
+            <div class="card-body">
+
+
+              <p>Quantity:{{selectedOrder.quantity}}</p>
+              <p>Price:{{selectedOrder.amount}}</p>
+              <p>name:{{selectedOrder.customer.name}}</p>
+              <p>location:{{selectedOrder.customer.address}}</p>
+
+
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
+    </div>
+  </ng-template>
+</div>
